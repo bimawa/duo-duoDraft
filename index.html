@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUO. Creative Agency.</title>
     <meta name="description" content="DUO is a creative result-driven agency working with graphic design and communications.">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Graphik:wght@400;500;600&display=swap">
+    <link rel="icon" href="https://c-p.rmcdn.net/5479c8026bbe3ca75cc0a82e/Favicon-4510f06a-eaba-4b95-9c6d-fe2d165fa7ef_144.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Graphik:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Graphik:wght@100;400;500&display=swap');
         
         * {
             margin: 0;
@@ -17,27 +19,46 @@
         :root {
             --color-primary: #5c5b34;
             --color-white: #ffffff;
-            --color-text: #222222;
+            --color-black: #222222;
         }
         
-        body {
+        html, body {
             font-family: 'Graphik', -apple-system, sans-serif;
-            color: var(--color-text);
+            color: var(--color-black);
             line-height: 1.5;
             background: var(--color-white);
+            overflow-x: hidden;
         }
         
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Fixed Header */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: var(--color-primary);
-            padding: 12px 40px;
+            padding: 16px 40px;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 66px;
+        }
+        
+        .header-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 8px;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--color-white);
+            letter-spacing: -0.5px;
         }
         
         .header nav {
@@ -47,154 +68,223 @@
         
         .header nav a {
             color: var(--color-white);
-            text-decoration: none;
-            font-size: 16px;
-            letter-spacing: 0.5px;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 0;
         }
         
+        /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
+            min-height: 700px;
             background: var(--color-primary);
             color: var(--color-white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 40px;
-            padding-top: 120px;
+            padding: 150px 40px 60px;
+            position: relative;
+        }
+        
+        .hero-bg-image {
+            position: absolute;
+            top: 80px;
+            left: -10%;
+            width: 50%;
+            height: 90%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 100%;
         }
         
         .hero-title {
-            font-size: 180px;
+            font-size: 121px;
             font-weight: 400;
             line-height: 1;
-            letter-spacing: -8px;
+            letter-spacing: -7px;
             text-transform: uppercase;
+            color: var(--color-white);
         }
         
         .hero-subtitle {
-            font-size: 32px;
-            margin-top: 24px;
-            letter-spacing: 2px;
+            font-size: 121px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -7px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-left: 280px;
         }
         
         .hero-contact {
-            margin-top: 60px;
+            margin-top: 80px;
             display: flex;
             gap: 40px;
+            font-size: 26px;
         }
         
         .hero-contact a {
             color: var(--color-white);
-            text-decoration: none;
-            font-size: 18px;
         }
         
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--color-primary);
+            margin: 40px 0;
+        }
+        
+        .divider-horizontal {
+            height: 24px;
+            width: 100%;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        /* About Section */
         .about {
-            padding: 120px 40px;
-            background: var(--color-white);
+            padding: 60px 40px;
         }
         
-        .section-title {
-            font-size: 72px;
+        .about-text {
+            font-size: 26px;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: -3px;
-            margin-bottom: 48px;
+            line-height: 33px;
             color: var(--color-primary);
         }
         
-        .about p {
-            font-size: 20px;
-            line-height: 1.8;
-            max-width: 800px;
-            color: var(--color-primary);
-        }
-        
-        .team {
-            padding: 80px 40px;
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .team-member h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .team-member p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--color-primary);
-        }
-        
-        .expertise {
-            padding: 120px 40px;
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
-        
-        .expertise .section-title {
-            color: var(--color-white);
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 48px;
-            margin-top: 60px;
-        }
-        
-        .expertise-item {
-            padding: 32px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        
-        .expertise-item h3 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-        }
-        
-        .expertise-item p {
-            font-size: 16px;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-        
-        .works {
-            padding: 120px 40px;
-            background: var(--color-white);
-        }
-        
-        .works-grid {
-            display: grid;
-            grid-template-columns: 1fr;
             gap: 80px;
             margin-top: 60px;
         }
         
+        .team-member h3 {
+            font-size: 16px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+        }
+        
+        .team-member p {
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--color-primary);
+        }
+        
+        .about-bottom {
+            margin-top: 60px;
+        }
+        
+        .about-bottom p {
+            font-size: 26px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 33px;
+            color: var(--color-primary);
+        }
+        
+        /* Expertise Section */
+        .expertise {
+            padding: 80px 40px;
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .expertise-title {
+            font-size: 121px;
+            font-weight: 400;
+            letter-spacing: -7px;
+            text-transform: uppercase;
+            color: var(--color-white);
+        }
+        
+        .expertise-subtitle {
+            font-size: 26px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-top: 33px;
+            color: var(--color-white);
+            letter-spacing: 0;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .expertise-item h4 {
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: var(--color-white);
+        }
+        
+        .expertise-item p {
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--color-white);
+            opacity: 0.9;
+        }
+        
+        .expertise-note {
+            margin-top: 60px;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--color-white);
+        }
+        
+        /* Works Section */
+        .works {
+            padding: 80px 40px;
+        }
+        
+        .works-title {
+            font-size: 121px;
+            font-weight: 400;
+            letter-spacing: -7px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+        
+        .works-list {
+            margin-top: 60px;
+        }
+        
         .work-item {
-            background: #f5f5f5;
-            padding: 60px;
+            margin-bottom: 60px;
         }
         
         .work-item h3 {
-            font-size: 48px;
+            font-size: 66px;
             font-weight: 400;
-            margin-bottom: 16px;
+            letter-spacing: -4px;
+            text-transform: uppercase;
             color: var(--color-primary);
         }
         
         .work-item p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 26px;
+            line-height: 33px;
             color: var(--color-primary);
+            margin-top: 16px;
         }
         
+        .work-item .work-tags {
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--color-primary);
+            margin-top: 16px;
+        }
+        
+        /* Contact Section */
         .contact {
             padding: 120px 40px;
             background: var(--color-primary);
@@ -203,13 +293,15 @@
         }
         
         .contact h2 {
-            font-size: 72px;
+            font-size: 121px;
             font-weight: 400;
+            letter-spacing: -7px;
             text-transform: uppercase;
-            margin-bottom: 48px;
+            color: var(--color-white);
         }
         
         .contact-links {
+            margin-top: 60px;
             display: flex;
             justify-content: center;
             gap: 48px;
@@ -218,41 +310,64 @@
         
         .contact-links a {
             color: var(--color-white);
-            text-decoration: none;
-            font-size: 20px;
+            font-size: 26px;
         }
         
+        /* Footer */
         footer {
             background: var(--color-primary);
             color: var(--color-white);
-            padding: 40px;
+            padding: 24px 40px;
             text-align: center;
             font-size: 14px;
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 80px;
-                letter-spacing: -3px;
+            .header {
+                padding: 12px 20px;
             }
             
-            .team, .expertise-grid {
+            .header nav {
+                gap: 16px;
+            }
+            
+            .header nav a {
+                font-size: 16px;
+            }
+            
+            .header-logo {
+                font-size: 18px;
+            }
+            
+            .hero {
+                padding: 100px 20px 40px;
+            }
+            
+            .hero-title, .hero-subtitle {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+            
+            .hero-subtitle {
+                margin-left: 0;
+            }
+            
+            .expertise-grid {
                 grid-template-columns: 1fr;
             }
             
-            .header {
-                padding: 16px 20px;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
             
-            .hero, .about, .expertise, .works, .contact {
-                padding: 80px 20px;
+            .works-title, .expertise-title, .contact h2 {
+                font-size: 48px;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div style="font-size: 20px; font-weight: 600; color: white;">DUO</div>
         <nav>
             <a href="#about">ABOUT</a>
             <a href="#expertise">EXPERTISE</a>
@@ -263,7 +378,7 @@
 
     <section class="hero">
         <h1 class="hero-title">Duo</h1>
-        <p class="hero-subtitle">Creative Agency</p>
+        <h1 class="hero-subtitle">Creative Agency</h1>
         <div class="hero-contact">
             <a href="https://wa.me/79163510795" target="_blank">whatsapp</a>
             <a href="mailto:eb@duo-buro.com">eb@duo-buro.com</a>
@@ -272,70 +387,83 @@
     </section>
 
     <section class="about" id="about">
-        <h2 class="section-title">About</h2>
-        <p>Duo is a creative agency born from partner collaboration. It carries a positive aesthetic vision, which comes from experience of its creators.</p>
+        <p class="about-text">Duo is a creative agency born from partner collaboration.</p>
+        <p class="about-text">It carries a positive aesthetic vision,</p>
+        <p class="about-text">which comes from experience of its creators.</p>
         
-        <div class="team">
+        <div class="divider"></div>
+        
+        <div class="about-grid">
             <div class="team-member">
-                <h3>Baranovskaya</h3>
-                <p>I support marketing decision makers and provide process support to business. Known for delivering impactful results for clients with a startup mindset, optimising marketing efforts for maximum effectiveness.</p>
+                <p style="font-size: 16px; margin-bottom: 16px;">Known for delivering impactful results for clients with a startup mindset, optimising marketing efforts for maximum effectiveness.</p>
+                <h3>BARANOVSKAYA:</h3>
+                <p>I support marketing decision makers and provide process support to business.</p>
             </div>
             <div class="team-member">
-                <h3>Glukhova</h3>
+                <h3>GLUKHOVA:</h3>
                 <p>I believe there's a story behind every project and business. Discovering a creative, unique, cutting-edge image associated with just you and what you create — is my favourite process.</p>
             </div>
         </div>
         
-        <p style="margin-top: 60px;">We adhere to the principles of integrity and consciousness and elevate brands in sustainable fashion, beauty, eco-tourism experiences, organic food, green buildings and materials, renewable energy and recycling.</p>
+        <div class="divider"></div>
+        
+        <div class="about-bottom">
+            <p>We adhere to the principles of integrity and consciousness and elevate brands in sustainable fashion, beauty, eco-tourism experiences, organic food, GREEN BUILDINGS AND MATERIALS, RENEWABLE ENERGY AND RECYCLING.</p>
+        </div>
     </section>
 
     <section class="expertise" id="expertise">
-        <h2 class="section-title">Expertise</h2>
+        <h2 class="expertise-title">Expertise:</h2>
+        <p class="expertise-subtitle">ENHANCING THE VALUE AND PERCEPTION OF THE BRAND</p>
+        
+        <div class="divider-horizontal"></div>
         
         <div class="expertise-grid">
             <div class="expertise-item">
-                <h3>1. Brand Strategy</h3>
+                <h4>1) Brand Strategy</h4>
                 <p>Brand wheel, defines brands purpose, values, target audience, positioning in the market</p>
             </div>
             <div class="expertise-item">
-                <h3>2. Brand Identity</h3>
+                <h4>2) Brand Identity</h4>
                 <p>Visual language and brand constants delivered in pdfs, KVs, working files that include logo, colour palette, typography and composition guidelines</p>
             </div>
             <div class="expertise-item">
-                <h3>3. Brand Messaging</h3>
+                <h4>3) Brand Messaging</h4>
                 <p>Communication strategy and positioning</p>
             </div>
             <div class="expertise-item">
-                <h3>4. Creative Content</h3>
-                <p>Art direction, Graphic design, Video production, VR / AR, Web design, Print projects</p>
+                <h4>4) Creative Content</h4>
+                <p>Art direction, Graphic design, Video production, VR / AR, Web design, Print projects: brochures, zines, magazines, books, Package design</p>
             </div>
             <div class="expertise-item">
-                <h3>5. SMM Marketing</h3>
-                <p>Influencer communications plans, Influencer partnership ideas, developing strategies and tactics</p>
+                <h4>5) SMM Marketing</h4>
+                <p>Influencer communications plans, Influencer partnership ideas, developing strategies and tactics to establish a strong and positive image of the brand</p>
             </div>
             <div class="expertise-item">
-                <h3>6. Brand Platform</h3>
+                <h4>Brand Platform</h4>
                 <p>Creating a strong and positive image of the brand</p>
             </div>
         </div>
         
-        <p style="margin-top: 60px; font-size: 24px;">We are recognized for the sensual emotional style, naturally engaging for the audience.</p>
+        <div class="divider-horizontal"></div>
+        
+        <p class="expertise-note">WE ARE RECOGNIZED FOR THE SENSUAL EMOTIONAL STYLE, NATURALLY ENGAGING FOR THE AUDIENCE.</p>
     </section>
 
     <section class="works" id="works">
-        <h2 class="section-title">Works</h2>
+        <h2 class="works-title">Works</h2>
         
-        <div class="works-grid">
+        <div class="works-list">
             <div class="work-item">
                 <h3>KEY HEALTHCARE</h3>
                 <p>Revitalizing the Brand: Crafting a Clear Vision and Designing a Captivating Identity on a conservative market</p>
-                <p style="margin-top: 16px;">Design — Brand Strategy — Production — Brand platform — Identity</p>
-            </div>
-            <div class="work-item">
-                <h3>More Projects Coming Soon</h3>
-                <p>We work with forward-thinking brands that want to make an impact.</p>
+                <p class="work-tags">Design — Brand Strategy — Production — Brand platform — Identity</p>
             </div>
         </div>
+        
+        <div class="divider"></div>
+        
+        <p style="font-size: 26px; color: var(--color-primary);">More projects coming soon.</p>
     </section>
 
     <section class="contact" id="contact">

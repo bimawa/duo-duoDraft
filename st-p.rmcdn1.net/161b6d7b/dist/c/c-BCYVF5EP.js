@@ -1,0 +1,1 @@
+import{a as t,d as p}from"./c-VP4RSUIR.js";import{D as r,F as i}from"./c-ST2D37D4.js";import{a as o}from"./c-3EFWE25P.js";function e(f){return r(t,{...f})}var s,a=o(()=>{"use strict";p();i();e.defaultProps={position:"fixed",zIndex:1e3,backgroundColor:"white",top:0,right:0,opacity:.9,bottom:0,left:0};s=e});var d=o(()=>{"use strict";a()});export{s as a,d as b};

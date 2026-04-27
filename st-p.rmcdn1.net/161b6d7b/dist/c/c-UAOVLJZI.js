@@ -1,0 +1,1 @@
+import{a,b,c,d,e,g as f}from"./c-GSDJUZRT.js";import"./c-5BE2KRZ2.js";import"./c-OZ5YUKRC.js";import"./c-74JNAGU5.js";import"./c-SDZISLJO.js";import"./c-ST2D37D4.js";import"./c-O236GQ4F.js";import"./c-3EFWE25P.js";f();export{c as BackboneCollectionContextProvider,a as BackboneContext,b as BackboneContextProvider,d as CreateContextProvider,e as renderReact};

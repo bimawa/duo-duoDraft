@@ -1,0 +1,1 @@
+import{D as a,k as l}from"./c-WZHUQR5L.js";import{a as t}from"./c-3EFWE25P.js";function n(e,r={}){return window.requestIdleCallback?window.requestIdleCallback(e,r):l(e)}var d=t(()=>{"use strict";a()});export{n as a,d as b};

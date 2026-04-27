@@ -1,0 +1,1 @@
+import{a as r}from"./c-U4IKS3MU.js";import{k as m}from"./c-OZ5YUKRC.js";import{D as o,F as t}from"./c-ST2D37D4.js";import{d as c}from"./c-3EFWE25P.js";var n=c(m());t();function i(e){let p=document.getElementById("root");n.default.hydrate(o(e,{...r()}),p)}export{i as a};

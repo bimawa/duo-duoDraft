@@ -1,0 +1,1 @@
+import{a as r,g as f}from"./c-GSDJUZRT.js";import{w as l,x as p}from"./c-XLMN7GH5.js";import{D as t,F as e}from"./c-ST2D37D4.js";import{a as s}from"./c-O236GQ4F.js";import{a as n,d as i}from"./c-3EFWE25P.js";function C(){let{model:o}=(0,m.useContext)(r);return t(l,{isFullSize:o?.isFullSize,style:o?.style})}var m,u=n(()=>{"use strict";m=i(s());f();p();e()});export{C as a,u as b};

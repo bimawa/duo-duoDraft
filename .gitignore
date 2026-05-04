@@ -1,3 +1,4 @@
 photos/*.jpg
 photos/*.png
 photos/*.jpeg
+.playwright-mcp/*
